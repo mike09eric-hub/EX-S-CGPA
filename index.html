@@ -29,7 +29,48 @@
  .tr-note{font-size:9px;color:#68776f;line-height:1.5;margin-top:18px;border-top:1px solid #dce5df;padding-top:10px}
  .tr-empty{padding:30px;text-align:center;border:1px dashed #9ab5a4;font-size:12px}
  @page{size:auto;margin:12mm}
-}</style></head><body>
+}
+/* EX'S CGPA visual refresh — clean lavender and purple student dashboard */
+:root{--bg:#f5f3ff;--panel:#ffffff;--panel2:#f1edff;--green:#7654e8;--mint:#6544d5;--text:#211b35;--muted:#817995;--line:#e7e1f4;--red:#d94b68;--gold:#b98222;color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{background:radial-gradient(ellipse at 88% -12%,#e4dcff 0,transparent 38%),#f7f5fc;color:#211b35;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;letter-spacing:-.12px}
+.shell{max-width:780px;padding-left:18px;padding-right:18px}
+.hero{padding-top:28px}
+.brand{font-size:23px;letter-spacing:-1px;color:#211b35}
+.brand em{color:#7654e8}
+.tag{color:#6847d4;border-color:#ded5ff;background:#f1edff}
+.welcome{margin-top:30px}.welcome h1{font-size:32px;letter-spacing:-1.35px;color:#211b35}.welcome p,.welcome small{color:#817995}
+.panel,.semester,.session-tracker,.analytics,.chart-card,.stat,.tool,.session-tile,.analytics-kpi,.grade-item{background:#fff!important;border:1px solid #e9e4f2!important;box-shadow:0 5px 20px #38236b0a}
+.panel{border-radius:23px}.main-score{background:linear-gradient(145deg,#7654e8,#5d3cc5)!important;color:#fff;border:0!important;box-shadow:0 12px 28px #7654e82b}
+.main-score .eyebrow,.main-score .outof{color:#e7e0ff}.main-score .score{color:#fff}.main-score .rank{background:#ffffff25;color:#fff}
+.ring{background:conic-gradient(#fff var(--pct,0%),#ffffff35 0)}.ring:before{background:#6948d3}.ring b{color:#fff}
+.stat{border-radius:16px}.stat strong{color:#29213e}.stat small{color:#817995}
+.section-head{margin-top:30px}.section-head h2{font-size:17px;color:#29213e}
+.btn{border-radius:12px;transition:transform .15s,box-shadow .15s}.btn:active,.tool:active,.tiny:active{transform:scale(.98)}
+.primary{background:#7654e8;color:#fff;box-shadow:0 6px 16px #7654e82a}.secondary{background:#f1edff;color:#6544d5;border:1px solid #e4dcff}.ghost{color:#817995;border-color:#e7e1f4}
+.semester{border-radius:19px;padding:16px}.sem-title{color:#29213e}.sem-meta{color:#817995}
+.tiny{background:#f5f2fc;color:#6847d4;border-color:#e7e1f4}
+.field{background:#faf9fd;color:#29213e;border:1px solid #e5e0ef;border-radius:10px}.field:focus{border-color:#9278ee;box-shadow:0 0 0 3px #7654e81a}.field::placeholder{color:#aaa3b8}.field option{background:#fff;color:#29213e}
+.remove{background:#fff0f2;color:#d94b68}
+.course-head{color:#817995}.sem-foot{border-color:#eee9f5;color:#817995}.sem-foot b{color:#6544d5}
+.tools{gap:10px}.tool{border-radius:16px;padding:14px;transition:.15s}.tool b{color:#29213e}.tool small{color:#817995}.tool-icon{background:#f1edff;color:#7654e8;border-radius:12px}
+.session-tracker,.analytics{border-radius:21px;padding:16px}.session-heading{color:#6544d5}.session-tile b{color:#6544d5}.session-tile small{color:#817995}
+.session-fields label,.eyebrow{color:#817995}.analytics-top h3{color:#29213e}.analytics-top p,.analytics-kpi small,.chart-heading small{color:#817995}.analytics-kpi b{color:#29213e}.analytics-kpi em{color:#6544d5}
+.chart-label{fill:#817995}.chart-value{fill:#4a3a72}.chart-gridline{stroke:#ece7f4}.chart-legend{color:#817995}.chart-legend i{background:#7654e8}
+.bar-track,.credit-track{background:#eeeaf5}.bar-fill,.credit-fill{background:linear-gradient(90deg,#7654e8,#b6a4ff)}
+.insight-summary{background:#f2effb;color:#746b86;border:1px solid #e9e3f5}.insight-summary b{color:#6544d5}
+.grade-item b{color:#7654e8}
+.bottom{background:#ffffffed;border-top:1px solid #e9e4f2;box-shadow:0 -5px 22px #38236b0a;backdrop-filter:blur(18px)}
+.nav{color:#938ba4}.nav.active{color:#7654e8}.nav span{font-size:20px}
+.toast{background:#29213e;color:#fff;box-shadow:0 8px 24px #211b3530}
+.modal,.profile-card{background:#fff;border:1px solid #e9e4f2;color:#29213e;box-shadow:0 20px 70px #211b3525}
+.modal h3,.profile-card h2{color:#29213e}.modal p,.profile-card p{color:#817995}.profile-card label{color:#6544d5}
+.backdrop,.profile-backdrop{background:#211b3570}
+.empty{border-color:#ded7ed;color:#817995}
+@media(max-width:390px){.shell{padding-left:13px;padding-right:13px}.welcome h1{font-size:28px}.dashboard{gap:8px}.panel{padding:14px}.score{font-size:43px}.tools{gap:8px}.tool{padding:11px;gap:8px}.tool-icon{width:32px;height:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+</style></head><body>
 <div class="shell"><header class="hero"><div class="top"><div class="brand">EX'S <em>CGPA</em></div><div class="top-actions"><div class="tag">STUDENT DASHBOARD</div></div></div><div class="welcome"><small>YOUR ACADEMIC JOURNEY</small><h1 id="welcomeName">Your dashboard</h1><div class="profile-line" id="profileLine">Set up your student profile</div><button class="profile-edit" id="editProfile">＋ Add student details</button><p>Your academic progress, all in one place.</p></div></header>
 <section class="dashboard"><div class="panel main-score"><div class="eyebrow">Cumulative grade point average</div><div class="scoreline"><div><div class="score" id="cgpa">0.00</div><div class="outof">out of 5.00</div></div><div class="ring" id="ring"><b id="percent">0%</b></div></div><div class="rank" id="classification">Ready when you are</div></div><div class="stats"><div class="stat"><small>CREDIT UNITS</small><strong id="units">0</strong></div><div class="stat"><small>GRADE POINTS</small><strong id="points">0.0</strong></div><div class="stat"><small>SEMESTERS</small><strong id="semcount">1</strong></div><div class="stat"><small>COURSES</small><strong id="coursecount">0</strong></div></div></section>
 <div class="section-head"><h2>Academic session tracker</h2><span class="eyebrow">SESSION &amp; LEVEL</span></div><section class="session-tracker"><div class="session-heading">Organise your semesters by academic year and level</div><div id="sessionSummary" class="session-summary"></div></section><div class="section-head"><h2>Academic records</h2><button class="btn primary" id="addSem">＋ Add semester</button></div><div id="semesters"></div>
