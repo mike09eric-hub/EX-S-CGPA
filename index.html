@@ -75,7 +75,7 @@ function showModal(type){$("modal").classList.add("show");$("modalbody").innerHT
   target:page("target","Target planner","Plan the CGPA you want to achieve"),
   guide:page("guide","Grade scale","Understand the grade points")
  };
- bodies.top.appendChild($("dashboard"));
+ bodies.top.appendChild(document.querySelector(".dashboard"));
  bodies.records.appendChild($("semesters").previousElementSibling);
  bodies.records.appendChild($("semesters"));
  bodies.insights.appendChild($("insights").previousElementSibling);
