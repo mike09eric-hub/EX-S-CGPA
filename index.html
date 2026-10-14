@@ -126,7 +126,7 @@ function checkRegistration(){
  entries.forEach((x,i)=>{
   const label="Course "+(i+1),name=(x.name||"").trim(),units=Number(x.unit);
   if(!name)issues.push(label+": course title or code is missing.");
-  else{const key=name.toUpperCase().replace(/\\s+/g," ").trim();if(seen.has(key))issues.push(label+": duplicate of course "+(seen.get(key)+1)+" ("+name+").");else seen.set(key,i)}
+  else{const key=name.toUpperCase().replace(/\s+/g," ").trim();if(seen.has(key))issues.push(label+": duplicate of course "+(seen.get(key)+1)+" ("+name+").");else seen.set(key,i)}
   if(x.unit===""||x.unit===undefined||!Number.isFinite(units)||units<=0)issues.push(label+": enter a valid credit unit greater than zero.");
   else if(units>30)issues.push(label+": "+units+" units is unusually high for one course (maximum checked is 30).");
  });
