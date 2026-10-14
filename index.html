@@ -51,7 +51,7 @@ function showModal(type){$("modal").classList.add("show");$("modalbody").innerHT
   const page=document.createElement("main");page.className="app-page";page.id="page-"+id;
   page.innerHTML='<div class="page-heading"><button class="page-back" type="button" aria-label="Back to dashboard">‹</button><div><h2>'+title+'</h2><p>'+subtitle+'</p></div></div><div class="page-body"></div>';
   page.querySelector(".page-back").onclick=()=>goPage("top");
-  shell.insertBefore(page,$("drawerShade"));pages[id]=page;return page.querySelector(".page-body");
+  shell.appendChild(page);pages[id]=page;return page.querySelector(".page-body");
  }
  const dash=makePage("top","Dashboard","Your academic overview");
  const records=makePage("records","Academic records","Add, edit and organise your semesters and courses");
