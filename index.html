@@ -70,6 +70,16 @@ body{background:radial-gradient(ellipse at 88% -12%,#e4dcff 0,transparent 38%),#
 @media(max-width:390px){.shell{padding-left:13px;padding-right:13px}.welcome h1{font-size:28px}.dashboard{gap:8px}.panel{padding:14px}.score{font-size:43px}.tools{gap:8px}.tool{padding:11px;gap:8px}.tool-icon{width:32px;height:32px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
+
+/* Compact horizontal statistics strip beneath the CGPA hero */
+.dashboard{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:stretch}
+.dashboard .main-score{width:100%;min-height:158px}
+.dashboard .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;min-width:0}
+.dashboard .stat{min-width:0;min-height:78px;padding:11px 9px;border-radius:14px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.dashboard .stat small{font-size:clamp(7px,1.9vw,9px);letter-spacing:.35px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dashboard .stat strong{font-size:clamp(16px,4.5vw,22px);line-height:1.1;margin-top:7px;white-space:nowrap}
+@media(max-width:360px){.dashboard .stats{gap:5px}.dashboard .stat{padding:9px 6px}.dashboard .stat small{font-size:6.5px}.dashboard .stat strong{font-size:15px}}
+
 </style></head><body>
 <div class="shell"><header class="hero"><div class="top"><div class="brand">EX'S <em>CGPA</em></div><div class="top-actions"><div class="tag">STUDENT DASHBOARD</div></div></div><div class="welcome"><small>YOUR ACADEMIC JOURNEY</small><h1 id="welcomeName">Your dashboard</h1><div class="profile-line" id="profileLine">Set up your student profile</div><button class="profile-edit" id="editProfile">＋ Add student details</button><p>Your academic progress, all in one place.</p></div></header>
 <section class="dashboard"><div class="panel main-score"><div class="eyebrow">Cumulative grade point average</div><div class="scoreline"><div><div class="score" id="cgpa">0.00</div><div class="outof">out of 5.00</div></div><div class="ring" id="ring"><b id="percent">0%</b></div></div><div class="rank" id="classification">Ready when you are</div></div><div class="stats"><div class="stat"><small>CREDIT UNITS</small><strong id="units">0</strong></div><div class="stat"><small>GRADE POINTS</small><strong id="points">0.0</strong></div><div class="stat"><small>SEMESTERS</small><strong id="semcount">1</strong></div><div class="stat"><small>COURSES</small><strong id="coursecount">0</strong></div></div></section>
