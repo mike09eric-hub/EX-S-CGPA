@@ -100,13 +100,13 @@ function showModal(type){$("modal").classList.add("show");$("modalbody").innerHT
   window.scrollTo(0,0);
  }
  document.querySelectorAll("[data-go]").forEach(btn=>btn.addEventListener("click",()=>show(btn.dataset.go)));
- $("menuTarget").addEventListener("click",()=>show("target"));
- $("menuGuide").addEventListener("click",()=>show("guide"));
- $("target").addEventListener("click",()=>show("target"));
- $("guide").addEventListener("click",()=>show("guide"));
- $("menuProfile").addEventListener("click",()=>{closeMenu();openProfile(false)});
- $("printReport").addEventListener("click",()=>{persist();window.print()});
- $("editProfile").addEventListener("click",()=>openProfile(false));
+ $("menuTarget").onclick=()=>show("target");
+ $("menuGuide").onclick=()=>show("guide");
+ $("target").onclick=()=>show("target");
+ $("guide").onclick=()=>show("guide");
+ $("menuProfile").onclick=()=>{closeMenu();openProfile(false)};
+ $("printReport").onclick=()=>{persist();window.print()};
+ $("editProfile").onclick=()=>openProfile(false);
  show("top");
 })();
 
