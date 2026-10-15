@@ -1,0 +1,9 @@
+{
+  "appId": "com.advancedcgpa.calculator",
+  "appName": "Advanced CGPA Calculator",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false
+  }
+}
