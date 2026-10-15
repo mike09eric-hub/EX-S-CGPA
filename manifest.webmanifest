@@ -1,0 +1,19 @@
+{
+  "name": "EX'S CGPA — Student Command Centre",
+  "short_name": "EX'S CGPA",
+  "description": "A mobile-friendly 5.0 CGPA calculator and academic planner.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071d17",
+  "theme_color": "#071d17",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
