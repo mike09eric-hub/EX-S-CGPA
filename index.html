@@ -316,11 +316,12 @@ function checkRegistration(){
   const label="Course "+(i+1),name=(x.name||"").trim(),units=Number(x.unit);
   if(!name)issues.push(label+": course title or code is missing.");
   else{const key=name.toUpperCase().replace(/\s+/g," ").trim();if(seen.has(key))issues.push(label+": duplicate of course "+(seen.get(key)+1)+" ("+name+").");else seen.set(key,i)}
-  if(x.unit===""||x.unit===undefined||!Number.isFinite(units)||units<=0)issues.push(label+": enter a valid credit unit greater than zero.");
+  if(x.unit===""||x.unit===undefined||!Number.isFinite(units)||!Number.isInteger(units)||units<=0)issues.push(label+": enter a whole credit-unit value from 1 to 30.");
   else if(units>30)issues.push(label+": "+units+" units is unusually high for one course (maximum checked is 30).");
  });
- const totalUnits=entries.reduce((sum,x)=>sum+(Number(x.unit)>0?Number(x.unit):0),0);
- if(totalUnits>Number(p.maxUnits||24))issues.push("Total workload is "+totalUnits+" units, above your set limit of "+p.maxUnits+".");
+ const limit=Number(p.maxUnits);const totalUnits=entries.reduce((sum,x)=>sum+(Number(x.unit)>0?Number(x.unit):0),0);
+ if(!Number.isInteger(limit)||limit<1||limit>60)issues.push("Set a valid whole-number semester credit limit from 1 to 60.");
+ else if(totalUnits>limit)issues.push("Total workload is "+totalUnits+" units, above your set limit of "+limit+".");
  if(!entries.length)issues.push("No courses have been added yet.");
  const host=$("planCheck");
  host.innerHTML=(issues.length?'<b style="color:#ffaaaa">Needs attention · '+issues.length+' issue(s)</b><br>'+issues.map(esc).join("<br>"):'<b style="color:#a5f3cf">Registration check passed</b><br>Course entries look complete and total workload is within your selected limit.')+(warnings.length?"<br>"+warnings.map(esc).join("<br>"):"")+'<br><small style="color:var(--muted)">Total planned units: '+totalUnits+' / '+esc(p.maxUnits||24)+'. This is a planning aid, not an official departmental approval.</small>';
@@ -334,8 +335,11 @@ $("transferPlan").onclick=()=>{
  const courses=p.courses.map(x=>({name:x.name.trim(),unit:Number(x.unit),score:"",grade:"F"}));
  const semesterName=(p.name||"Upcoming semester").trim();
  if(!confirm("Add "+courses.length+" planned course(s) to academic records as a new semester? Your existing records will remain unchanged."))return;
+ const previousSemesters=state.semesters.slice(),previousPlan=JSON.stringify(p);
  state.semesters.push({name:semesterName,academicSession:p.academicSession||"",level:p.level||"",courses});
- p.courses=[];p.name="Upcoming semester";persist();render();renderPlanner();toast("Courses added to academic records");
+ p.courses=[];p.name="Upcoming semester";
+ if(!persist()){state.semesters=previousSemesters;state.planner=JSON.parse(previousPlan);renderPlanner();toast("Could not save the transfer; your plan has been kept");return}
+ render();renderPlanner();toast("Courses added to academic records");
 };
 $("recordSearch").oninput=()=>render();$("addSem").onclick=()=>{const prev=state.semesters[state.semesters.length-1]||{};state.semesters.push({name:"Semester "+(state.semesters.length+1),academicSession:prev.academicSession||"",level:prev.level||"",courses:[]});persist();render()};$("save").onclick=()=>{persist();toast("Progress saved on this phone")};$("printReport").onclick=()=>{persist();buildTranscript();window.print()};$("reset").onclick=()=>{if(confirm("Delete all semesters and courses? This cannot be undone.")){state.semesters=[{name:"Semester 1",courses:[]}];persist();render();toast("Records cleared")}};
 $("exportData").onclick=()=>{try{const payload={app:"EX\'S CGPA",version:2,exportedAt:new Date().toISOString(),studentName:state.studentName||"",educationYear:state.educationYear||"",courseOfStudy:state.courseOfStudy||"",goalCgpa:state.goalCgpa??null,planner:state.planner??null,semesters:state.semesters};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="EXS-CGPA-backup-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);toast("Backup downloaded")}catch(e){toast("Could not create backup")}};
