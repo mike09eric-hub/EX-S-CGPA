@@ -162,6 +162,58 @@ button:disabled{opacity:.48;cursor:not-allowed}
  html{scroll-behavior:auto}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* EX'S CGPA premium visual finish */
+:root{--accent:#7451e8;--accent2:#a58cff;--ink:#241b3b;--surface:#fff;--soft:#f5f1ff}
+body{background:radial-gradient(ellipse at 8% 0%,#eee8ff 0,transparent 32%),radial-gradient(ellipse at 100% 28%,#e9f8f1 0,transparent 30%),#f8f7fc;color:var(--ink)}
+.shell{max-width:820px}
+.hero{padding-bottom:18px}
+.top{padding:11px 13px;border:1px solid #eae5f4;border-radius:18px;background:#ffffffc9;box-shadow:0 8px 26px #38236b0a;backdrop-filter:blur(12px)}
+.brand{font-size:24px;letter-spacing:-1.25px}
+.tag{box-shadow:inset 0 0 0 1px #ffffff;background:linear-gradient(135deg,#f4f0ff,#fff)}
+.welcome{margin-top:25px;padding:5px 2px 18px}
+.welcome h1{font-size:clamp(30px,7vw,39px);line-height:1.02;letter-spacing:-1.7px}
+.welcome h1:after{content:"";display:block;width:54px;height:4px;border-radius:8px;margin-top:13px;background:linear-gradient(90deg,#7654e8,#b5a5ff)}
+.dashboard{gap:13px}
+.main-score{min-height:184px;padding:20px;border-radius:25px;background:linear-gradient(135deg,#8668f2 0%,#6946d6 58%,#5033b4 100%)!important;box-shadow:0 16px 32px #6f4cdb35!important}
+.main-score:before{content:"";position:absolute;width:210px;height:210px;right:-95px;top:-110px;border:1px solid #ffffff30;border-radius:50%;box-shadow:0 0 0 20px #ffffff0c,0 0 0 42px #ffffff08}
+.main-score:after{width:165px;height:165px;right:-62px;bottom:-100px;border-color:#ffffff38;box-shadow:0 0 0 18px #ffffff0d,0 0 0 36px #ffffff08}
+.score{font-size:clamp(48px,11vw,58px);text-shadow:0 4px 16px #24104a30}
+.rank{border:1px solid #ffffff30;backdrop-filter:blur(8px)}
+.ring{width:62px;height:62px;filter:drop-shadow(0 5px 9px #2e155d40)}
+.stats{gap:10px}
+.stat{padding:15px 13px;border-radius:18px;transition:transform .2s,box-shadow .2s}
+.stat strong{font-size:24px;letter-spacing:-1px}
+.section-head{margin:31px 3px 13px}
+.section-head h2{font-size:18px;letter-spacing:-.55px}
+.section-head h2:before{content:"";display:inline-block;width:4px;height:17px;border-radius:8px;background:#7654e8;margin:0 9px -3px 0}
+.panel,.semester,.session-tracker,.analytics{box-shadow:0 9px 28px #39236b0b!important}
+.panel{border-radius:24px}
+.semester{border-radius:21px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.sem-top{align-items:flex-start}
+.sem-title{font-size:15px}
+.course{padding:3px 0}
+.field{min-height:40px;transition:border-color .16s,box-shadow .16s,background .16s}
+.btn{min-height:42px;letter-spacing:.1px}
+.primary{background:linear-gradient(135deg,#8060ed,#6744d4);box-shadow:0 7px 17px #7654e832}
+.secondary{background:linear-gradient(135deg,#f4f0ff,#ece6ff)}
+.tool{min-height:69px;box-shadow:0 5px 15px #39236b08!important}
+.tool-icon{width:40px;height:40px;font-size:19px;box-shadow:inset 0 0 0 1px #e5dcff}
+.analytics{background:linear-gradient(145deg,#fff,#faf8ff)!important}
+.analytics-kpi{border-radius:16px}
+.chart-card{border-radius:18px}
+.bottom{padding-top:9px}
+.nav{min-height:49px;min-width:62px;border-radius:14px;transition:background .18s,color .18s}
+.nav.active{background:#f0ebff;color:#6946d6}
+.nav.active span{transform:translateY(-1px)}
+.toast{box-shadow:0 10px 28px #24143b2b;border:1px solid #bcebd2}
+.modal,.profile-card{border-radius:25px;box-shadow:0 24px 80px #25183c35}
+:focus-visible{outline:3px solid #a58cff!important;outline-offset:3px}
+@media(hover:hover){.stat:hover,.tool:hover,.semester:hover{transform:translateY(-2px);box-shadow:0 12px 26px #39236b12!important}.primary:hover{box-shadow:0 10px 24px #7654e84a}.tiny:hover{background:#eee8ff}}
+@media(max-width:520px){.shell{padding-left:14px;padding-right:14px}.hero{padding-top:17px}.top{padding:9px 11px}.welcome{margin-top:22px}.dashboard{gap:9px}.main-score{padding:16px;min-height:171px}.score{font-size:44px}.stats{gap:7px}.stat{padding:12px 10px}.stat strong{font-size:21px}.panel{padding:14px}.section-head{margin-top:26px}.tools{gap:8px}.tool{padding:11px;gap:8px}.tool-icon{width:35px;height:35px}.bottom{padding-left:4px;padding-right:4px}.nav{min-width:0;flex:1;font-size:8px}}
+@media(max-width:360px){.tag{font-size:8px;padding:6px 7px}.brand{font-size:20px}.welcome h1{font-size:28px}.main-score{min-height:158px}.score{font-size:39px}.tool b{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.stat,.tool,.semester,.btn,.nav{transition:none!important}}
+
 </style></head><body>
 <div class="shell"><header class="hero"><div class="top"><div class="brand">EX'S <em>CGPA</em></div><div class="top-actions"><div class="tag">STUDENT DASHBOARD</div></div></div><div class="welcome"><small>YOUR ACADEMIC JOURNEY</small><h1 id="welcomeName">Your dashboard</h1><div class="profile-line" id="profileLine">Set up your student profile</div><button class="profile-edit" id="editProfile">＋ Add student details</button><p>Your academic progress, all in one place.</p></div></header>
 <section class="dashboard"><div class="panel main-score"><div class="eyebrow">Cumulative grade point average</div><div class="scoreline"><div><div class="score" id="cgpa">0.00</div><div class="outof">out of 5.00</div></div><div class="ring" id="ring"><b id="percent">0%</b></div></div><div class="rank" id="classification">Ready when you are</div></div><div class="stats"><div class="stat"><small>CREDIT UNITS</small><strong id="units">0</strong></div><div class="stat"><small>GRADE POINTS</small><strong id="points">0.0</strong></div><div class="stat"><small>SEMESTERS</small><strong id="semcount">1</strong></div><div class="stat"><small>COURSES</small><strong id="coursecount">0</strong></div></div></section>
