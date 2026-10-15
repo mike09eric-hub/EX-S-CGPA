@@ -214,8 +214,52 @@ body{background:radial-gradient(ellipse at 8% 0%,#eee8ff 0,transparent 32%),radi
 @media(max-width:360px){.tag{font-size:8px;padding:6px 7px}.brand{font-size:15px;letter-spacing:-.5px}.welcome h1{font-size:28px}.main-score{min-height:158px}.score{font-size:39px}.tool b{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.stat,.tool,.semester,.btn,.nav{transition:none!important}}
 
+
+/* Premium violet identity + accessible persistent theme support */
+:root{--brand:#7654e8;--brand2:#a78bfa;--brand-soft:#f1edff;--accent:#f0b84b}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 12px;border:1px solid #ded5ff;border-radius:13px;background:#f1edff;color:#6040c9;font-size:11px;font-weight:900;box-shadow:0 4px 14px #7654e812;transition:transform .18s,background .18s}
+.theme-toggle:active{transform:scale(.96)}
+.theme-toggle span:first-child{font-size:15px}
+body[data-theme="dark"]{color-scheme:dark;background:radial-gradient(ellipse at 88% -12%,#38236f 0,transparent 42%),#0b0a14;color:#f4f0ff}
+body[data-theme="dark"] .brand,body[data-theme="dark"] .welcome h1,body[data-theme="dark"] .section-head h2,body[data-theme="dark"] .sem-title,body[data-theme="dark"] .tool b,body[data-theme="dark"] .analytics-top h3{color:#f4f0ff}
+body[data-theme="dark"] .brand em{color:#b49aff}
+body[data-theme="dark"] .welcome p,body[data-theme="dark"] .welcome small,body[data-theme="dark"] .eyebrow,body[data-theme="dark"] .sem-meta,body[data-theme="dark"] .course-head,body[data-theme="dark"] .sem-foot,body[data-theme="dark"] .tool small,body[data-theme="dark"] .stat small,body[data-theme="dark"] .analytics-top p,body[data-theme="dark"] .analytics-kpi small,body[data-theme="dark"] .chart-heading small,body[data-theme="dark"] .chart-legend{color:#aaa1c3}
+body[data-theme="dark"] .tag{background:#211936;color:#c9b8ff;border-color:#403064}
+body[data-theme="dark"] .theme-toggle{background:#211936;color:#d4c5ff;border-color:#49366f}
+body[data-theme="dark"] .menu-btn,body[data-theme="dark"] .tiny{background:#211936;color:#d4c5ff;border-color:#403064}
+body[data-theme="dark"] .panel,body[data-theme="dark"] .semester,body[data-theme="dark"] .session-tracker,body[data-theme="dark"] .analytics,body[data-theme="dark"] .chart-card,body[data-theme="dark"] .stat,body[data-theme="dark"] .tool,body[data-theme="dark"] .session-tile,body[data-theme="dark"] .analytics-kpi,body[data-theme="dark"] .grade-item{background:#171323!important;border:1px solid #302642!important;box-shadow:0 10px 28px #0003}
+body[data-theme="dark"] .main-score{background:linear-gradient(145deg,#7654e8,#4d32a5)!important;border:0!important}
+body[data-theme="dark"] .main-score .eyebrow,body[data-theme="dark"] .main-score .outof{color:#e9e0ff}
+body[data-theme="dark"] .stat strong,body[data-theme="dark"] .analytics-kpi b{color:#f4f0ff}
+body[data-theme="dark"] .field{background:#100d19;color:#f4f0ff;border-color:#3a304b}
+body[data-theme="dark"] .field::placeholder{color:#807691}
+body[data-theme="dark"] .field option{background:#171323;color:#f4f0ff}
+body[data-theme="dark"] .remove{background:#3a1d2b;color:#ff9db4}
+body[data-theme="dark"] .secondary,body[data-theme="dark"] .tool-icon,body[data-theme="dark"] .insight-chip{background:#28203a;color:#cbbaff;border-color:#40345a}
+body[data-theme="dark"] .ghost{color:#b5abc8;border-color:#40364d}
+body[data-theme="dark"] .session-heading,body[data-theme="dark"] .session-tile b,body[data-theme="dark"] .analytics-kpi em{color:#c4adff}
+body[data-theme="dark"] .chart-label{fill:#aaa1c3}
+body[data-theme="dark"] .chart-value{fill:#eee7ff}
+body[data-theme="dark"] .chart-gridline{stroke:#342a43}
+body[data-theme="dark"] .bar-track,body[data-theme="dark"] .credit-track{background:#332b40}
+body[data-theme="dark"] .insight-summary{background:#211a30;color:#bdb2d0;border-color:#3a304b}
+body[data-theme="dark"] .insight-summary b{color:#d1c1ff}
+body[data-theme="dark"] .bottom{background:#100d19ed;border-color:#302642}
+body[data-theme="dark"] .nav{color:#8d829f}
+body[data-theme="dark"] .nav.active{color:#b49aff}
+body[data-theme="dark"] .drawer{background:#171323;border-color:#302642}
+body[data-theme="dark"] .menu-link:active,body[data-theme="dark"] .menu-link:hover{background:#28203a;border-color:#40345a}
+body[data-theme="dark"] .profile-card,body[data-theme="dark"] .modal{background:#171323;border-color:#40345a;color:#f4f0ff}
+body[data-theme="dark"] .profile-card p,body[data-theme="dark"] .modal p{color:#aaa1c3}
+body[data-theme="dark"] .profile-card label{color:#c4adff}
+body[data-theme="dark"] .empty{border-color:#40345a;color:#aaa1c3}
+body[data-theme="dark"] .rank{background:#ffffff25;color:#fff}
+body[data-theme="dark"] .ring:before{background:#6948d3}
+body[data-theme="dark"] .footnote{color:#aaa1c3}
+@media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
+
 </style></head><body>
-<div class="shell"><header class="hero"><div class="top"><div class="brand">Advanced <em>CGPA Calculator</em></div><div class="top-actions"><div class="tag">STUDENT DASHBOARD</div></div></div><div class="welcome"><small>YOUR ACADEMIC JOURNEY</small><h1 id="welcomeName">Your dashboard</h1><div class="profile-line" id="profileLine">Set up your student profile</div><button class="profile-edit" id="editProfile">＋ Add student details</button><p>Your academic progress, all in one place.</p></div></header>
+<div class="shell"><header class="hero"><div class="top"><div class="brand">Advanced <em>CGPA Calculator</em></div><div class="top-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><span id="themeIcon">🌙</span><span id="themeLabel">Dark</span></button><div class="tag">STUDENT DASHBOARD</div></div></div><div class="welcome"><small>YOUR ACADEMIC JOURNEY</small><h1 id="welcomeName">Your dashboard</h1><div class="profile-line" id="profileLine">Set up your student profile</div><button class="profile-edit" id="editProfile">＋ Add student details</button><p>Your academic progress, all in one place.</p></div></header>
 <section class="dashboard"><div class="panel main-score"><div class="eyebrow">Cumulative grade point average</div><div class="scoreline"><div><div class="score" id="cgpa">0.00</div><div class="outof">out of 5.00</div></div><div class="ring" id="ring"><b id="percent">0%</b></div></div><div class="rank" id="classification">Ready when you are</div></div><div class="stats"><div class="stat"><small>CREDIT UNITS</small><strong id="units">0</strong></div><div class="stat"><small>GRADE POINTS</small><strong id="points">0.0</strong></div><div class="stat"><small>SEMESTERS</small><strong id="semcount">1</strong></div><div class="stat"><small>COURSES</small><strong id="coursecount">0</strong></div></div></section>
 <div class="section-head"><h2>Academic session tracker</h2><span class="eyebrow">SESSION &amp; LEVEL</span></div><section class="session-tracker"><div class="session-heading">Organise your semesters by academic year and level</div><div id="sessionSummary" class="session-summary"></div></section><div class="section-head"><h2>Academic records</h2><button class="btn primary" id="addSem">＋ Add semester</button></div><div style="margin:0 0 12px"><input class="field" id="recordSearch" type="search" placeholder="Search semester, session, level or course..." aria-label="Search academic records"></div><div id="semesters"></div>
 <div class="section-head"><h2>Course registration planner</h2><span class="eyebrow">PLAN AHEAD</span></div>
@@ -355,4 +399,6 @@ document.querySelectorAll("[data-go]").forEach(btn=>btn.onclick=()=>{
 });
 
 
+</script><script>
+(()=>{const key="exscgpa-theme";const root=document.body;const btn=document.getElementById("themeToggle");const icon=document.getElementById("themeIcon");const label=document.getElementById("themeLabel");function apply(theme){const dark=theme==="dark";root.dataset.theme=dark?"dark":"light";if(icon)icon.textContent=dark?"☀️":"🌙";if(label)label.textContent=dark?"Light":"Dark";if(btn){btn.setAttribute("aria-label",dark?"Switch to light theme":"Switch to dark theme");btn.title=dark?"Switch to light theme":"Switch to dark theme"}const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=dark?"#0b0a14":"#7654e8"}let saved="light";try{saved=localStorage.getItem(key)||"light"}catch(e){}apply(saved);if(btn)btn.addEventListener("click",()=>{const next=root.dataset.theme==="dark"?"light":"dark";apply(next);try{localStorage.setItem(key,next)}catch(e){}})})();
 </script><script>if("serviceWorker" in navigator && (location.protocol==="https:" || location.hostname==="localhost")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(error=>console.warn("Offline install support unavailable",error)));}</script></body></html>
