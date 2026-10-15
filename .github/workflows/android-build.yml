@@ -38,10 +38,11 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           accept-android-sdk-licenses: true
+          packages: platform-tools
 
       - name: Install Android SDK packages
         run: |
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Install Capacitor
         run: npm install @capacitor/core@^7 @capacitor/cli@^7 @capacitor/android@^7
