@@ -1,7 +1,7 @@
 {
-  "name": "EX'S CGPA — Student Command Centre",
-  "short_name": "EX'S CGPA",
-  "description": "A mobile-friendly 5.0 CGPA calculator and academic planner.",
+  "name": "Advanced CGPA Calculator",
+  "short_name": "Advanced CGPA",
+  "description": "An advanced mobile-friendly 5.0 CGPA calculator and academic planner.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
